@@ -11,7 +11,7 @@ def normal_equation(X, y):
         theta = np.linalg.pinv(X.T * X) * X.T * y
         return theta
     except np.linalg.LinAlgError:
-        print 'SVD function in normal equation did not converge.'
+        print('SVD function in normal equation did not converge.')
     return np.zeros((m, 1))
 
 def normalize(X, parameters, m):
