@@ -4,7 +4,6 @@ import extract_data as extract
 
 data_filepath = input('Enter file path for data set > ')
 param_filepath = input('Enter file path with prediction parameters > ')
-print() # new line for structuring command line output
 
 m, y, X = extract.datafile_values(data_filepath)
 parameters = extract.paramfile_values(param_filepath)
@@ -12,7 +11,7 @@ theta = np.zeros((m, 1))
 X_norm, param_norm = lr.normalize(X, parameters, m)
 
 # Normal equation
-print('Attemping normal equation...')
+print('\nAttemping normal equation...')
 if m < 100000:
     theta = lr.normal_equation(X, y)
 else:
